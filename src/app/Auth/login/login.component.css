@@ -1,0 +1,63 @@
+.login-body{
+  background:url('/assets/images/wallpaper.jpg');
+  background-position: center center;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  max-width: 500px;
+  background-color: #0000006e;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 54px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+span {
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+input{
+  background-color: transparent !important;
+  color: #ddd;
+}
+input::placeholder{
+  color: #aaa;
+}
+input:focus{
+  color: #eee;
+}
+
+@media (max-width: 576px){
+  .login-form {
+    border-radius: 0;
+    max-width: 576px !important;
+    padding: 5px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
