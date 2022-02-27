@@ -9,6 +9,7 @@ const routes: Routes = [
   //auth
   { path: 'log-in', component: LoginComponent },
   { path: 'sin-up', component: SinupComponent },
+  // { path: '', redirectTo: '/log-in', pathMatch: 'full' },
 
 ];
 

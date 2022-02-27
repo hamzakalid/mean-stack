@@ -5,29 +5,54 @@
     <h2 class="text-light">create new account</h2>
 
     <div class="form-group p-3">
-      <form (ngSubmit)="onSubmit()" formGroupName="sinupForm">
+      <form (ngSubmit)="onSubmit()" [formGroup]="sinupForm">
         <div class="form-group">
           <div class="form-group">
             <label for="name" class="text-light"> Your Name</label>
-            <input type="name" class="form-control" id="name" placeholder="Enter your name">
-            <div id="validationServerNameFeedback" class="invalid-feedback">
+            <input type="name"
+            [ngClass]="sinupForm.get('name')?.hasError('required') ? 'is-invalid' : '' "
+            class="form-control" id="name" placeholder="Enter your name" formControlName="name">
+            <div id="validationServerNameFeedback" class="invalid-feedback"
+            *ngIf="sinupForm.get('name')?.hasError('required')">
               Please choose a name.
             </div>
           </div>
           <label for="email" class="text-light" >Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter your email">
-          <div id="validationServerUsernameFeedback" class="invalid-feedback">
-            Please choose a correct email.
+          <input type="email"
+          [ngClass]="sinupForm.get('email')?.hasError('required') || sinupForm.get('email')?.hasError('email')? 'is-invalid' : ''"
+          class="form-control" id="email" placeholder="Enter your email" formControlName="email">
+          <div id="validationServerUsernameFeedback"
+            *ngIf="sinupForm.get('email')?.hasError('email') &&
+            !sinupForm.get('email')?.hasError('required')"
+            class="invalid-feedback">
+            This faild must be email.
+          </div>
+          <div id="validationServerUsernameFeedback"
+            *ngIf="sinupForm.get('email')?.hasError('required')"
+            class="invalid-feedback">
+              Please choose a email.
           </div>
         </div>
         <div class="form-group">
           <label for="password" class="text-light">Password</label>
-          <input type="password" class="form-control " id="password" placeholder="Enter your password">
-          <div id="validationServerpasswordFeedback" class="invalid-feedback">
-            Please choose a password.
-          </div>
+          <input type="password"
+          [ngClass]="sinupForm.get('password')?.hasError('required') ? 'is-invalid' : ''"
+          class="form-control " id="password" placeholder="Enter your password" formControlName="password">
+          <div id="validationServerpasswordFeedback"
+          *ngIf="sinupForm.get('password')?.hasError('required')"
+          class="invalid-feedback">
+          Please choose a password.
         </div>
-        <button type="submit" class="btn btn-primary w-100">Sinup now</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100"
+         [ngClass]="sinupForm.invalid ? 'disabled' : ''">
+        <div ngClass="{{isLoading? 'loading': 'text'}}">
+          <div class="text" *ngIf="!isLoading">Login</div>
+          <div  *ngIf="isLoading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+        </div>
+        </button>
       </form>
     </div>
 
