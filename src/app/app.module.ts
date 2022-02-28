@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AuthInterceptor } from './Auth/auth.interceptor';
 import { LoginComponent } from './Auth/login/login.component';
 import { SinupComponent } from './Auth/sinup/sinup.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SinupComponent } from './Auth/sinup/sinup.component';
 
     AppComponent,
     LoginComponent,
-    SinupComponent
+    SinupComponent,
+    NavbarComponent
   ],
   imports: [
     ReactiveFormsModule,
