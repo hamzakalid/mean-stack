@@ -1,0 +1,46 @@
+<!-- <h2>t{{post.title}}</h2> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3  ">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-7 pt-4">
+      <img src="http://via.placeholder.com/1000x400" class="w-100 my-5" alt="">
+      <h1 class="text-center">{{post.title}}</h1>
+      <div class="text-center pt-3">
+       <span class="px-4">By <a class="nav-link d-inline" href="/">{{post.user}}</a></span>/
+        <span class="px-4">{{post.date | date}}</span>/
+        <span class="px-4"><a class="nav-link d-inline" href="/">345 comments</a></span>
+      </div>
+      <div [froalaView]="post.content">
+
+      </div>
+    </div>
+    <div class="col-2  d-sm-flex">
+     <nav>
+       <ul class="list-group">
+         <li class="list-group-item">
+            <button class=" btn nav-link d-inline">
+              <fa-icon [icon]="icons.faLike"></fa-icon>
+              <span class="px-2">500</span>
+            </button>
+         </li>
+         <li class="list-group-item">
+
+            <button class=" btn nav-link d-inline">
+              <fa-icon [icon]="icons.faDisLike"></fa-icon>
+              <span class="px-2">800</span>
+            </button>
+         </li>
+         <li class="list-group-item">
+
+            <button class=" btn nav-link d-inline">
+              <fa-icon [icon]="icons.faShare"></fa-icon>
+              <span class="px-2">1100</span>
+            </button>
+         </li>
+       </ul>
+     </nav>
+    </div>
+  </div>
+</div>

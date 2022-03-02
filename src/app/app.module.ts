@@ -9,6 +9,13 @@ import { AuthInterceptor } from './Auth/auth.interceptor';
 import { LoginComponent } from './Auth/login/login.component';
 import { SinupComponent } from './Auth/sinup/sinup.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { PostEditorComponent } from './Posts/post-editor/post-editor.component';
+import { SidebarComponent } from './components/posts/sidebar/sidebar.component';
+import { PostsListComponent } from './Posts/posts-list/posts-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListOfPostsComponent } from './components/posts/list-of-posts/list-of-posts.component';
+import { PostComponent } from './Posts/post/post.component';
 
 
 @NgModule({
@@ -17,14 +24,22 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     LoginComponent,
     SinupComponent,
-    NavbarComponent
+    NavbarComponent,
+    PostEditorComponent,
+    PostsListComponent,
+    SidebarComponent,
+    ListOfPostsComponent,
+    PostComponent
   ],
   imports: [
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FroalaViewModule,
+    FroalaEditorModule,
+    FontAwesomeModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass: AuthInterceptor,multi:true}

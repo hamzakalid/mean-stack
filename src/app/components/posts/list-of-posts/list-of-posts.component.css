@@ -1,0 +1,48 @@
+
+.post{
+  max-height: 250px;
+}
+
+.post-content{
+  flex: auto;
+}
+
+.post-image{
+  padding-right: 5px;
+  height: 200px;
+  width: 200px;
+}
+.image{
+  margin: 5px ;
+  height: 190px;
+  width: 190px;
+  overflow: hidden;
+  border-radius: 8px;
+
+}
+.post-image .image img{
+
+  height: 100%;
+  width: 100%;
+}
+.header {
+  text-align: right;
+}
+.header small{
+  color: #666;
+  font-size: 11px;
+}
+h3 {overflow-wrap: break-word;}
+
+.desc {
+  color: #555;
+  overflow-wrap: break-word;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.post-counts {
+  align-items: center;
+  color: #666;
+  font-size: 12px;
+}

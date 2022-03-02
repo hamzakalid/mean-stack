@@ -1,0 +1,17 @@
+
+<h2 class="text-center mt-3">Create New Post</h2>
+
+<div class="container mt-5">
+  <div class="form-group">
+  <textarea dir="auto"  class="form-control" [(ngModel)]="title" id="exampleInput" placeholder="Enter The Title"></textarea>
+</div>
+ <div class="form-group">
+  <textarea maxlength="250" dir="auto" rows="4" class="form-control description" [(ngModel)]="description" id="exampleInput" placeholder="write the artical description"></textarea>
+</div>
+  <div dir="auto" [froalaEditor]="options" [(froalaModel)]="content" class="px-2 editor"></div>
+</div>
+
+<footer>
+  <button class="btn btn-primary" (click)="onPostCreate()">Create Post</button>
+</footer>
+

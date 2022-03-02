@@ -2,6 +2,10 @@ header {
   background: #fefefe;
   border-bottom: 1px solid #ddd;
   text-align: center;
+  top: 0;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
 }
 header .logo{
   width: calc(100% - 50px);

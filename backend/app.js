@@ -1,5 +1,8 @@
 //define the express
 const express = require('express');
+
+const path = require('path');
+const fs = require('fs');
 //define the body-parser
 /**-----------------------------------------------------------------------------
  * Body-parser is the Node.js body parsing middleware.It is responsible
@@ -13,9 +16,18 @@ const mongoose = require("mongoose");
 
 //define the user router
 const userRouter = require('./routers/user.router');
+const postRouter = require('./routers/post.router');
+// Create folder for uploading files.
 
 const app = express();
 
+
+var filesDir = path.join(path.dirname(require.main.filename), "/public");
+console.log(filesDir);
+if (!fs.existsSync(filesDir)){
+  fs.mkdirSync(filesDir);
+  fs.mkdirSync(path.join(filesDir, "/uploads"));
+}
 //Connect to the mango database
 
 mongoose.connect("mongodb+srv://hamzakhaled:xTuenKxHuxK7S6q@cluster0.rrhas.mongodb.net/hamzas_blog?")
@@ -25,13 +37,13 @@ mongoose.connect("mongodb+srv://hamzakhaled:xTuenKxHuxK7S6q@cluster0.rrhas.mongo
           console.log("the connection is faild :(");
         })
 
-
 // inital the body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
+app.use('/images', express.static(path.join('public/uploads')));
+// app.use(express.static('public'))
+// app.use('/uploads', express.static(path.join(__dirname, 'public/uploads/')));
 
-
-//This middeleware for fix the CORS Error
 //This error comes becouse the server run one two defrentec servers
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -46,7 +58,9 @@ app.use((req, res, next) => {
   // res.setHeader("multipart/form-data")
   next();
 });
-
+//Auth Router
 app.use('/api/auth',userRouter);
+//Post Router
+app.use('/api/posts',postRouter);
 
 module.exports =app;

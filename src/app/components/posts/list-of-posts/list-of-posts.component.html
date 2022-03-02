@@ -1,0 +1,41 @@
+<ul class="list-group list-group-flush">
+
+
+  <li class="list-group-item d-flex post"
+    *ngFor="let item of posts"
+  >
+    <div class="post-image overflow-hiddeb">
+      <div class="image">
+        <img src="http://via.placeholder.com/200x200  " [alt]="item.title">
+        <!-- <img src="https://picsum.photos/200/300?random=1"> -->
+      </div>
+    </div>
+    <div class="post-content">
+      <div class="header">
+        <small>{{item.date}}</small>
+      </div>
+      <div class="conent d-flex mt-2">
+        <div class="post">
+          <h4><a [routerLink]="'/post/'+item._id " class="nav-link">{{item.title}}</a></h4>
+          <p class="desc">{{item.description}}</p>
+        </div>
+        <!-- <div class="post-counts d-flex ">
+          <div class="">
+            <div class="like d-flex py-2 ">
+              <span class='mx-1'>{{item.likes}}</span>
+              <fa-icon [icon]="icons.faLike"></fa-icon>
+            </div>
+            <div class="comment d-flex  py-2 ">
+              <span class='mx-1'>{{item.comments}}</span>
+              <fa-icon [icon]="icons.faComment"></fa-icon>
+            </div>
+            <div class="seen d-flex  py-2 ">
+              <span class='mx-1'>{{item.views}}</span>
+              <fa-icon [icon]="icons.faEye"></fa-icon>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </li>
+</ul>
