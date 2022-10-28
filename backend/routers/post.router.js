@@ -84,7 +84,9 @@ router.post("/image_upload", function (req, res,next) {
     }
 
     let link = req.protocol + "://"+req.get('host')+"/images/"+data.link;
+
     res.send({link:link});
+
   });
 });
 

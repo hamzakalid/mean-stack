@@ -16,6 +16,7 @@ import { PostsListComponent } from './Posts/posts-list/posts-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListOfPostsComponent } from './components/posts/list-of-posts/list-of-posts.component';
 import { PostComponent } from './Posts/post/post.component';
+import { ProfileComponent } from './Auth/profile/profile.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PostComponent } from './Posts/post/post.component';
     PostsListComponent,
     SidebarComponent,
     ListOfPostsComponent,
-    PostComponent
+    PostComponent,
+    ProfileComponent
   ],
   imports: [
     ReactiveFormsModule,

@@ -16,6 +16,10 @@ const userSchema = mongoose.Schema({
   password : {
     type :String,
     required : true,
+  },
+  profile : {
+    type :String,
+    default : "/images/default.jpg"
   }
 })
 

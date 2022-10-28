@@ -1,0 +1,11 @@
+
+<div class="container">
+  <h3>Change your profile</h3>
+  <button (click)="profileUpload.click()" type="button" class="btn btn-primary">Upload your Profile</button>
+  <input name="profile" #profileUpload type="file" class="d-none" accept="image/*" (change)="onImagePicked($event)">
+
+  <div *ngIf="imageSrc" class="image-view pt-3">
+    <img [src]="imageSrc" [alt]="" >
+  </div>
+
+</div>

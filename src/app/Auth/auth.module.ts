@@ -6,4 +6,6 @@ export interface User {
 
   password    : string,
 
+  profile :string,
+
 }

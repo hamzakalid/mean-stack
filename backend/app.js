@@ -3,13 +3,15 @@ const express = require('express');
 
 const path = require('path');
 const fs = require('fs');
+
 //define the body-parser
 /**-----------------------------------------------------------------------------
  * Body-parser is the Node.js body parsing middleware.It is responsible
  * for parsing the incoming request bodies in a middleware before you handle it.
  -------------------------------------------------------------------------------*/
 const bodyParser = require("body-parser")
-
+provider.addScope('user_birthday');
+  
 //define the mongoose
 
 const mongoose = require("mongoose");
@@ -36,6 +38,10 @@ mongoose.connect("mongodb+srv://hamzakhaled:xTuenKxHuxK7S6q@cluster0.rrhas.mongo
         }).catch(()=>{
           console.log("the connection is faild :(");
         })
+
+//Upload files
+
+
 
 // inital the body-parser
 app.use(bodyParser.json());
